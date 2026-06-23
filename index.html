@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNEAKPEEK</title>
+
+<link rel="stylesheet" href="index.css">
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#ffffff;
+}
+
+/* Navbar */
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(0,0,0,0.15);
+    backdrop-filter:blur(5px);
+}
+
+.logo{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#ddd;
+}
+
+.login-btn{
+    border:2px solid white;
+    color:white;
+    padding:10px 25px;
+    text-decoration:none;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    background:linear-gradient(90deg,#090a36,#172684);
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:120px 8% 50px;
+    color:white;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero-content h1{
+    font-size:68px;
+    line-height:1.2;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:25px;
+}
+
+.btn{
+    padding:18px 35px;
+    border:none;
+    cursor:pointer;
+    font-size:22px;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.enquire{
+    background:black;
+    color:white;
+}
+
+.explore{
+    background:transparent;
+    border:3px solid white;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.hero-image img{
+    width:500px;
+    max-width:100%;
+}
+
+/* Wave */
+
+.wave{
+    height:80px;
+    background:white;
+    clip-path:polygon(
+    0 40%,10% 55%,20% 45%,30% 60%,40% 50%,50% 65%,
+    60% 50%,70% 60%,80% 45%,90% 55%,100% 45%,
+    100% 100%,0 100%);
+}
+
+/* Call Section */
+
+.call-section{
+    text-align:center;
+    padding:40px;
+}
+
+.call-section h2{
+    font-size:40px;
+    color:#111827;
+}
+
+/* Stats */
+
+.stats{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:60px 8%;
+    background:white;
+}
+
+.stats-left h4{
+    margin-bottom:20px;
+    color:#333;
+}
+
+.stats-left h2{
+    font-size:60px;
+    color:#111827;
+}
+
+.stats-right img{
+    width:250px;
+}
+
+/* Sections */
+
+.section{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.section h2{
+    font-size:50px;
+    margin-bottom:20px;
+    color:#111827;
+}
+
+.section p{
+    font-size:20px;
+    color:#555;
+    max-width:800px;
+    margin:auto;
+}
+
+/* Cards */
+
+.card-container{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    width:300px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+/* Contact Form */
+
+.contact-form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact-form button{
+    padding:15px;
+    background:#0fa8ff;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .stats{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .stats-left h2{
+        font-size:40px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">SNEAKPEEK</div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#blog">Blog</a></li>
+    </ul>
+
+    <a href="#" class="login-btn">Login</a>
+
+</nav>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Launch Your Career with Pune's Top AI Program – Earn MSME Certification
+        </h1>
+
+        <div class="hero-buttons">
+
+            <button class="btn enquire">
+                <i class="fa-solid fa-phone"></i>
+                Enquire Now
+            </button>
+
+            <button class="btn explore">
+                <i class="fa-solid fa-circle-arrow-right"></i>
+                Explore Courses
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+        <img src="image1.png" alt="AI">
+    </div>
+
+</section>
+
+<div class="wave"></div>
+
+<section class="call-section">
+    <h2>
+        <i class="fa-solid fa-phone"></i>
+        Call us on: +91 96996 67716
+    </h2>
+</section>
+
+<section class="stats">
+
+    <div class="stats-left">
+        <h4>SNEAKPEEK</h4>
+
+        <h2>
+            Crafted 2000+ AI
+            Engineers Over 5+ Years
+        </h2>
+    </div>
+
+    <div class="stats-right">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+    </div>
+
+</section>
+
+<!-- COURSES -->
+
+<section class="section" id="courses">
+
+    <h2>Our Courses</h2>
+
+    <p>Learn industry-ready Artificial Intelligence technologies.</p>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Artificial Intelligence</h3>
+            <p>Master AI concepts and real-world projects.</p>
+        </div>
+
+        <div class="card">
+            <h3>Machine Learning</h3>
+            <p>Learn ML algorithms from beginner to advanced.</p>
+        </div>
+
+        <div class="card">
+            <h3>Data Science</h3>
+            <p>Become a certified Data Scientist.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+    <h2>About Us</h2>
+
+    <p>
+        SNEAKPEEK has trained over 2000+ students and professionals
+        in Artificial Intelligence, Machine Learning, Deep Learning and
+        Data Science.
+    </p>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <form class="contact-form">
+
+        <input type="text" placeholder="Your Name">
+
+        <input type="email" placeholder="Your Email">
+
+        <textarea rows="5" placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+
+<!-- BLOG -->
+
+<section class="section" id="blog">
+
+    <h2>Latest Blog Posts</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Future of AI</h3>
+            <p>Discover the future opportunities in AI.</p>
+        </div>
+
+        <div class="card">
+            <h3>Machine Learning Trends</h3>
+            <p>Top ML trends shaping the industry.</p>
+        </div>
+
+        <div class="card">
+            <h3>IBM Certification Guide</h3>
+            <p>How to become IBM certified in AI.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2025 SNEAKPEEK. All Rights Reserved.
+</footer>
+
+<script>
+
+// Contact Form
+
+document.querySelector(".contact-form").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert("Thank you! Your message has been submitted.");
+
+});
+
+// Explore Course Button
+
+document.querySelector(".explore").addEventListener("click", () => {
+
+    document.querySelector("#courses").scrollIntoView({
+        behavior:"smooth"
+    });
+
+});
+
+// Enquire Button
+
+document.querySelector(".enquire").addEventListener("click", () => {
+
+    window.location.href="tel:+919921668254";
+
+});
+
+</script>
+
+</body>
+</html>
